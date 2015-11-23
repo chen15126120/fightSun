@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ccn.medical.dao.DoctorAppointmentTimeMapper" >
+  <resultMap id="DoctorAppointmentTime" type="ccn.medical.model.DoctorAppointmentTime" >
+		<result jdbcType="INTEGER" property="appointmentId" column="appointment_id"/>
+		<result jdbcType="INTEGER" property="doctorId" column="doctor_id"/>
+		<result jdbcType="VARCHAR" property="doctorName" column="doctor_name"/>
+		<result jdbcType="DATE" property="startTime" column="start_time"/>
+		<result jdbcType="VARCHAR" property="timeQuantum"  column="time_quantum" /> 
+		<result jdbcType="FLOAT" property="price" column="price"/>
+		<result jdbcType="DATE" property="createTime" column="create_time"/>
+		<result jdbcType="INTEGER" property="state" column="state"/>
+		<result jdbcType="DATE" property="cancelTime" column="cancel_time"/>
+		
+		<result jdbcType="INTEGER" property="usersId" column="users_id"/>
+		<result jdbcType="VARCHAR" property="usersName" column="users_name"/>
+		<result jdbcType="INTEGER" property="usersSymptomId" column="users_symptom_id"/>
+		<result jdbcType="VARCHAR" property="usersSymptom" column="users_symptom"/>
+		
+		</resultMap>
+  
+   <!-- 专家预约  专家时间 -->
+  <select id="queryDoctorIndexAppointmentTimes" resultMap="DoctorAppointmentTime" parameterType="int">
+  	SELECT * FROM doctor_appointment_time
+  	  where  doctor_id = #{doctorId}
+  	ORDER BY start_time,time_quantum DESC
+  </select>
+  
+  <!-- 专家预约 专家每天可预约的时间段 -->
+  <select id="queryDoctorDayTimes" resultMap="DoctorAppointmentTime" parameterType="map">
+  	SELECT * FROM doctor_appointment_time where  doctor_id = #{doctorId} AND start_time = #{startTime} ORDER BY start_time,time_quantum DESC
+  </select>
+</mapper>

@@ -1,0 +1,454 @@
+#content #left{
+	width: 200px;
+	height: 600px;
+	margin: 35px 0;
+}
+#left .nav li {
+	width: 145px;
+	line-height: 40px;
+	text-align: center;
+	margin: 5px;
+}
+#left .nav li a:hover,#left .nav li.active a{
+	color: #fff;
+	background: #fc9a00;
+}
+#left .nav li a{
+	display: block;
+	font-size: 18px;
+	color: #333;	
+	background: #f6f6f6;
+}
+#content #right, #content #order{
+	width: 750px;
+	margin: 30px 0;
+}
+#right table{
+	width: 100%;
+	margin: 10px 0 30px 0;
+	border: 1px solid #ddd;
+}
+#right table td h1{
+	color: #08a3ea;
+	font-size: 20px;
+	background: #f7f7f7;
+	padding: 5px 10px;
+	border-bottom: 1px solid #ddd;
+}
+#right table td img{
+	border-radius: 80px;
+}
+#right table td {
+	color: #666;
+	width: 500px;
+	font-size: 16px;	
+	line-height: 40px;
+}
+#right table td.img{
+	width: 140px;
+	text-align: center;
+}
+#right table td img.img{
+	border: 0px;
+	width: 200px;
+	height: 150px;
+	border-radius: 5px;
+}
+#right table td p{
+	margin-left: 85px;
+	width: 400px; 
+}
+#right table td span{
+	margin: 5px 10px;
+	color: #aaa;
+}
+#right table td.address{
+	border-bottom: 1px solid #ddd;
+}
+#right p a.edit{
+	width: 100px;
+	color: #fff;
+	font-size: 18px;
+	margin: 0 15px;
+	background: #fc9a00;
+}
+#right .question-list h1,.upload h1{
+	font-size: 20px;
+	color: #fff;
+	width: 120px;
+	margin: 10px 0;
+	padding: 5px 10px;
+	border-radius: 15px;
+	text-align: center;
+	background: #c7c5be;
+}
+#right .question-list li{
+	margin: 10px 0;
+	min-height: 150px;
+	border: 1px solid #ddd;
+}
+#right .question-list li .title{
+	color: #aaa;
+	background: #f5f7ed;
+	font-size: 14px;
+	line-height: 30px;
+	padding: 0 10px;
+	border-bottom: 1px solid #ddd;
+}
+#right .question-list li p {
+	font-size: 16px;
+	padding: 10px 10px 0 10px;
+	line-height: 30px;
+}
+#right .question-list li .question span{
+	color: #fc9a00;
+	font-weight: 700;
+}
+#right .question-list li .answer span{
+	color: #08a3ea;
+	font-weight: 700;
+}
+#right .question-list li p.time{
+	color: #aaa;
+	padding: 10px;
+	font-size: 14px;
+	text-align: right;
+}
+#right .question-list a{
+	display: block;
+	text-align: right;
+	width: 100%;
+	color: #08a3ea;
+	text-decoration: underline;
+	font-size: 14px;
+	margin-bottom: 40px;
+}
+#right .send-question h1{
+	font-size: 20px;
+	color: #fff;
+	width: 120px;
+	margin: 10px 0;
+	padding: 5px 10px;
+	border-radius: 15px;
+	text-align: center;
+	background: #08a3ea;
+}
+#right .send-question textarea{
+	width: 600px;
+	padding: 10px;
+	font-size: 16px;
+	resize:none;
+	color: #666;
+	margin: 15px 0;
+	height: 120px;
+	/*border-radius: 20px;*/
+	display: block;
+}
+#error{
+	display:none;color:red;margin: 20px 0;font-size: 16px;
+}
+#right .send-question .btn-send,#right .send-question .btn-cancle{
+	width: 100px;
+	color: #fff;
+	font-size: 18px;
+	margin-right: 20px;
+}
+#right .send-question .btn-send {
+	background: #fc9a00;
+}
+#right .send-question .btn-cancle{
+	background: #999;
+}
+
+#right .upload-form .fl-left{
+	width: 56%;
+}
+
+#right .upload-form .form-basic .form-control{
+	width: 180px;
+}
+#right .upload-form .file a{
+	position: relative;
+    display: inline-block;
+    background: #08a3ea;
+    border-radius: 5px;
+    padding: 4px 12px;
+    width: 35px;
+    overflow: hidden;
+    color: #fff;
+}
+#right .upload-form .file .upload-btn{
+	position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+#right .upload-form .file a:hover{
+	background: #AADFFD;
+    color: #333;
+}
+#right .upload-form .upload-img{
+	width: 42%;
+	margin: 30px 0;
+	height: 200px;
+	border: 1px solid #ddd;
+	background: #eee;
+}
+.btn-register{
+	font-size: 20px;
+	color: #fff;
+	font-weight: 700;
+	width: 250px;
+	background-color: #fc9a00;
+	margin: 20px 120px;
+}
+.btn-number{
+	font-size: 20px;
+	color: #fff;
+	font-weight: 700;
+	width: 250px;
+	background-color: #fc9a00;
+	margin: 15px;
+}
+
+
+.btn-profile,.btn-cancle{
+	font-size: 20px;
+	color: #fff;
+	font-weight: 700;
+	width: 100px;
+	background-color: #fc9a00;
+	margin: 20px 120px;
+}
+.btn-profile{
+	margin: 20px 0 20px 250px;
+}
+.btn-cancle{
+	margin: 20px 40px;
+	background-color: #999;
+}
+.form-basic .profile-label{
+	width: 64px;
+	font-size: 16px;
+}
+
+
+
+/*修改个人信息*/
+#profile .profile{
+	width: 500px;
+}
+#profile .upload-img{
+	width: 240px;
+	text-align: center;
+	margin-top: 40px;
+}
+#profile .upload-img img{
+	border-radius: 100px;
+	width: 100px;
+}
+#profile .upload-img .zige img{
+	border-radius: 5px;
+	width: 160px;
+}
+#profile .upload-img .file{
+	margin: 20px 0;
+}
+#profile .upload-img a{
+	position: relative;
+    display: inline-block;
+    background: #08a3ea;
+    border-radius: 5px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #fff;
+}
+#profile .upload-img .upload{
+	position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+#profile .upload-img a:hover{
+	background: #AADFFD;
+    color: #333;
+}
+
+#guardian h1{
+	width: 140px;
+	margin-top: 60px;
+}
+#guardian .second{
+	margin-top: 40px;
+}
+.form-basic .big{
+	width: 548px;
+}
+#profile .error input,#guardian .error input{
+	border: 1px solid red;
+	border-radius: 5px;
+}
+
+/*时间选择器样式*/
+.ui-widget-header{
+	border: 0;
+	background: #ccc;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+	text-align: center;
+	/*line-height: 20px;*/
+	border: 0;
+	background: none;
+}
+.ui-state-default:hover, .ui-widget-content .ui-state-default:hover, .ui-widget-header .ui-state-default:hover{
+	color: #fff;
+	background: #333;
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight{
+	color: #333;
+	font-weight: bold;
+	background: #eee;
+	border-color: #eee;
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{
+	color: #fff;
+	font-weight: bold;
+	background: #08a3ea;
+	border-color: #08a3ea;
+}
+
+
+#order .date{
+	height: 18px;
+	margin: 10px 0;
+}
+#order .date h1{
+	color: #333;
+	float: left;
+	font-size: 20px;
+}
+#order .date p{
+	font-size: 14px;
+	float: right;
+	line-height: 28px;
+}
+#order .date p span{
+	margin: 10px;
+}
+#order .date p a{
+	color: #fff;
+	background: #fc9a00;
+	display: block;
+	width: 40px;
+	float: left;
+	margin: 0 10px;
+	padding: 3px 10px;
+	border-radius: 20px;
+}
+#order .table{
+	width: 960px;
+	margin: 30px 0px;
+	text-align: center;
+}
+#order .table>tbody>tr>td {
+	padding: 12px;
+	font-size: 14px;
+}
+#order .table>tbody>tr>td,#order .table>thead>tr>th{
+	background: #f6f6f6;
+}
+#order .table>tbody>tr>td a{
+	color: #fff;
+}
+#order .table>tbody>tr>td.able,#order .table>tbody>tr>td.disabled{
+	background: #73e470;
+}
+#order .table>tbody>tr>td.disabled{
+	background: #bebebe;
+}
+#order .table>tbody>tr>td.disabled a{
+	color: #333;
+}
+#info{
+	width: 750px;
+	border: 1px solid #ccc;
+}
+#info th{
+	text-align: left;
+	padding: 8px;
+	line-height: 1.42857143;
+}
+#info td{
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+#info>tbody>tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+#calendar{
+	margin: 0 0 30px 0;
+}
+#calendar .fc-time-grid .fc-slats td{
+	height: 2.95em;
+}
+#calendar .fc-day-grid-event .fc-content{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+}
+#calendar .fc-basic-view .fc-body .fc-row{
+	min-height: 30px;
+}
+#calendar .fc th, .fc td{
+	font-size: 16px;
+	height: 20px;
+	line-height: 20px;
+}
+.fc-ltr .fc-basic-view .fc-day-number {
+  text-align: center;
+  line-height: 2em;
+}
+.fc th, .fc td{
+	height: 5px;
+	line-height: 35px;
+}
+.table-normal>tbody>tr>td, .table-normal>thead>tr>th{
+	text-align: center;
+	font-size: 16px;
+}
+.ui-widget-content a{
+	color: #fff;
+	display: block;
+	text-align: center;
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+	font-weight: 700px;	
+	border-radius: 10px;
+}
+.ui-widget-content .disabled a{
+	color: #333;
+	background: #bebebe;
+}
+.ui-widget-content .able a{
+	color: #fff;
+	background: #73e470;
+}
+.ui-datepicker .ui-datepicker-title{
+	line-height: 1.8em;
+	text-align: left;
+}
+.ui-datepicker select.ui-datepicker-year,.ui-datepicker select.ui-datepicker-month {
+  width: 42%;
+}
+.ui-state-default, .ui-widget-content .ui-state-default{
+	/*line-height: 35px;*/
+}
+.ui-datepicker td .ui-state-default{
+	padding: 0px;
+}

@@ -1,0 +1,56 @@
+$(function(){
+	$('#nav .nav-father > li').hover(function(){
+      $(this).find('.children').animate({ opacity:'show', height:'show' },400);
+      $(this).find('.nav-l').addClass('active');
+    }, function() {
+      $('.children').stop(true,true).animate({ opacity:'hide', height:'hide' },400);
+      $('.nav-l').removeClass('active');
+    });
+
+	//点击回到顶部的元素
+	$("#gotop").click(function(e) {
+	      //以1秒的间隔返回顶部
+	      $('body,html').animate({scrollTop:0},1000);
+	});
+	$(window).scroll(function(e) {
+	  //若滚动条离顶部大于100元素
+	  if($(window).scrollTop()>100)
+	      $("#gotop").show();
+	  else
+	      $("#gotop").hide();
+	});
+
+	// 点击显示隐藏我的咨询列表页
+	var content = $('.question-list li:gt(3)');
+
+    if($('.question-list li').length > 4){
+        content.css('display','none');
+		    $('#more').click(function(){
+		        if(content.is(":visible")){
+		            content.animate({ opacity:'hide', height:'hide' },400);
+		            $("#more").text("点击查看更多");
+		        }else{
+		            content.animate({ opacity:'show', height:'show' },400);
+		            $("#more").text("点击隐藏更多");
+		        }
+		        return false;
+		    });
+        }else{
+
+        $("#more").text("");
+    };
+    $('.showDialog').hover(function(){
+    	$('#weixinShowDiv').show();
+    	$('#weixinShowDiv').css('display','block');
+    },function(){
+    	$('#weixinShowDiv').hide();    	
+    	$('#weixinShowDiv').css('display','none');
+    });
+    $('.weiboShowDiv').hover(function(){
+    	$('#weiboShowDiv').show();
+    	$('#weiboShowDiv').css('display','block');
+    },function(){
+    	$('#weiboShowDiv').hide();    	
+    	$('#weiboShowDiv').css('display','none');
+    })
+});

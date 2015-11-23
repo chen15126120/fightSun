@@ -1,0 +1,33 @@
+package ccn.medical.controller;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import ccn.medical.service.MessageInfoService;
+
+@Controller
+public class MessageInfoController {
+
+	
+	private MessageInfoService messageInfoService;
+	
+	public MessageInfoService getMessageInfoService() {
+		return messageInfoService;
+	}
+	@Autowired
+	public void setMessageInfoService(MessageInfoService messageInfoService) {
+		this.messageInfoService = messageInfoService;
+	}
+
+
+	@RequestMapping("/im")
+	public void queryIndexMessage(){
+		try {
+			//List<MessageInfo> list = messageInfoService.queryIndexMessage();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

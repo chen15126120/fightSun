@@ -1,0 +1,74 @@
+package ccn.medical.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="new_message")
+public class MessageInfo {
+
+	public int messageId;
+	public String messageTitle;
+	public String messageContent;
+	
+	public String messageTime;
+	public String messagePublisher;
+	public String createTime;
+	public int state;
+	
+	@Column(name="create_time")
+	public String getCreateTime() {
+		return createTime;
+	}
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+	@Column(name="state")
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
+	@Column(name="message_id")
+	public int getMessageId() {
+		return messageId;
+	}
+	public void setMessageId(int messageId) {
+		this.messageId = messageId;
+	}
+	
+	@Column(name="message_title")
+	public String getMessageTitle() {
+		return messageTitle;
+	}
+	public void setMessageTitle(String messageTitle) {
+		this.messageTitle = messageTitle == null ? null : messageTitle.trim();
+	}
+	
+	@Column(name="message_content")
+	public String getMessageContent() {
+		return messageContent;
+	}
+	public void setMessageContent(String messageContent) {
+		this.messageContent = messageContent == null ? null : messageContent.trim();
+	}
+	
+
+	@Column(name="message_time")
+	public String getMessageTime() {
+		return messageTime;
+	}
+	public void setMessageTime(String messageTime) {
+		this.messageTime = messageTime;
+	}
+	
+	@Column(name="message_publisher")
+	public String getMessagePublisher() {
+		return messagePublisher;
+	}
+	public void setMessagePublisher(String messagePublisher) {
+		this.messagePublisher = messagePublisher == null ? null : messagePublisher.trim();
+	}
+}

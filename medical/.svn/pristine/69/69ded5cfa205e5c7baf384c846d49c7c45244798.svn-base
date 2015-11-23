@@ -1,0 +1,11 @@
+package ccn.medical.dao;
+
+import java.util.List;
+
+import ccn.medical.model.MessageInfo;
+
+public interface MessageInfoMapper {
+	
+	public  List<MessageInfo> queryIndexMessage() throws Exception;
+	
+}

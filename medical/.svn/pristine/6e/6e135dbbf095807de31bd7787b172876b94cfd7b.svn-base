@@ -1,0 +1,64 @@
+Ext.define('Medical.view.main.Main', {
+    extend: 'Ext.container.Container',
+    requires:['Medical.view.user.UserGrid'],
+    
+	layout : 'border',
+	rtl: true,  
+	
+    items : [
+ 			// 添加标题栏
+ 			{
+ 				itemId : 'panHead',
+ 				xtype : 'panel',
+ 				region : 'north',
+ 				height : 60,
+                border:false,
+
+ 				// 设置标题栏背景
+ 				bodyStyle : {
+ 					background : '#00A64F'
+ 				},
+ 		   },
+ 		// 添加导航栏
+           {
+ 			    region: 'west',  
+ 	            id: 'west-region',  
+ 	            title: '导航',  
+ 	            width: 200,  
+ 	            collapsible: true,  
+ 	            split: true,  
+ 	          /* tbar: {  
+ 	                enableOverflow: true,  
+ 	                items: [{  
+ 	                    text: "这是西区"  
+ 	                }, {  
+ 	                    text: "西区二"  
+ 	                }, {  
+ 	                    text: "西区三"  
+ 	                }, {  
+ 	                    text: "西区四"  
+ 	                }, {  
+ 	                    text: "西区五"  
+ 	                }]  
+ 	            }  */
+           },
+           // 添加操作区
+           {
+              //itemId: 'tabsOperation',
+              /* xtype: 'tabpanel',
+               border:false,
+               minTabWidth: 90,
+               tabPosition : 'bottom',
+               region: 'center',
+               bodyStyle: 'background:#E8E4E1',
+               closeAction : true,
+               activeTab: 0,*/
+        	   region: 'center',  
+               xtype: 'grid',  
+               plugins: [new Ext.grid.plugin.RowEditing()],  
+               title: '心灵彩虹远程问诊平台'
+                
+           }
+ 		]
+  
+});

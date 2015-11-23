@@ -1,0 +1,230 @@
+package ccn.medical.util;
+import java.text.ParseException;  
+import java.text.SimpleDateFormat;  
+import java.util.Calendar;  
+import java.util.Date; 
+/**
+ * 时间格式转换
+ * 
+ * @author
+ *
+ */
+public class TimeUtil {  
+   
+    private Calendar calendar=Calendar.getInstance();  
+       
+       
+    /** 
+     * 得到当前的时间，时间格式yyyy-MM-dd 
+     * @return 
+     */ 
+    public String getCurrentDate(){  
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");  
+        return sdf.format(new Date());  
+    }  
+       
+    /** 
+     * 得到当前的时间,自定义时间格式 
+     * y 年 M 月 d 日 H 时 m 分 s 秒 
+     * @param dateFormat 输出显示的时间格式 
+     * @return 
+     */ 
+    public String getCurrentDate(String dateFormat){  
+        SimpleDateFormat sdf=new SimpleDateFormat(dateFormat);  
+        return sdf.format(new Date());  
+    }  
+       
+    /** 
+     * 日期格式化，默认日期格式yyyy-MM-dd 
+     * @param date 
+     * @return 
+     */ 
+    public String getFormatDate(Date date){  
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");  
+        return sdf.format(date);  
+    }  
+       
+    /** 
+     * 日期格式化，自定义输出日期格式 
+     * @param date 
+     * @return 
+     */ 
+    public String getFormatDate(Date date,String dateFormat){  
+        SimpleDateFormat sdf=new SimpleDateFormat(dateFormat);  
+        return sdf.format(date);  
+    }  
+    /** 
+     * 返回当前日期的前一个时间日期，amount为正数 当前时间后的时间 为负数 当前时间前的时间 
+     * 默认日期格式yyyy-MM-dd 
+     * @param field 日历字段 
+     * y 年 M 月 d 日 H 时 m 分 s 秒 
+     * @param amount 数量 
+     * @return 一个日期 
+     */ 
+    @SuppressWarnings("static-access")
+	public String getPreDate(String field,int amount){  
+        calendar.setTime(new Date());  
+        if(field!=null&&!field.equals("")){  
+            if(field.equals("y")){  
+                calendar.add(calendar.YEAR, amount);  
+            }else if(field.equals("M")){  
+                calendar.add(calendar.MONTH, amount);  
+            }else if(field.equals("d")){  
+                calendar.add(calendar.DAY_OF_MONTH, amount);  
+            }else if(field.equals("H")){  
+                calendar.add(calendar.HOUR, amount);  
+            }  
+        }else{  
+            return null;  
+        }         
+        return getFormatDate(calendar.getTime());  
+    }  
+       
+    /** 
+     * 某一个日期的前一个日期 
+     * @param d,某一个日期 
+     * @param field 日历字段 
+     * y 年 M 月 d 日 H 时 m 分 s 秒 
+     * @param amount 数量 
+     * @return 一个日期 
+     */ 
+    @SuppressWarnings("static-access")
+	public String getPreDate(Date date,String field,int amount){  
+        calendar.setTime(date);  
+        if(field!=null&&!field.equals("")){  
+            if(field.equals("y")){  
+                calendar.add(calendar.YEAR, amount);  
+            }else if(field.equals("M")){  
+                calendar.add(calendar.MONTH, amount);  
+            }else if(field.equals("d")){  
+                calendar.add(calendar.DAY_OF_MONTH, amount);  
+            }else if(field.equals("H")){  
+                calendar.add(calendar.HOUR, amount);  
+            }  
+        }else{  
+            return null;  
+        }         
+        return getFormatDate(calendar.getTime());  
+    }  
+       
+    /** 
+     * 某一个时间的前一个时间 
+     * @param date 
+     * @return 
+     * @throws ParseException  
+     */ 
+    public String getPreDate(String date) throws ParseException{  
+        Date d=new SimpleDateFormat().parse(date);  
+        String preD=getPreDate(d,"d",1);  
+        Date preDate=new SimpleDateFormat().parse(preD);  
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");  
+        return sdf.format(preDate);  
+    }  
+       
+    /** 
+     * 返回unix时间戳 (1970年至今的秒数) 
+     * @return 
+     */ 
+    public static long getUnixStamp(){  
+         return System.currentTimeMillis()/1000;  
+    }  
+       
+    /** 
+     * 得到昨天的日期 
+     * @return 
+     */ 
+    public static String getYestoryDate() {  
+            Calendar calendar = Calendar.getInstance();    
+            calendar.add(Calendar.DATE,-1);  
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");  
+            String yestoday = sdf.format(calendar.getTime());  
+            return yestoday;  
+    }  
+       
+    /** 
+     * 得到今天的日期 
+     * @return 
+     */ 
+    public static  String getTodayDate(){  
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");  
+            String date = sdf.format(new Date());  
+            return date;  
+    }  
+       
+    /** 
+     * 时间戳转化为时间格式 
+     * @param timeStamp 
+     * @return 
+     */ 
+    public static String timeStampToStr(long timeStamp) {  
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+            String date = sdf.format(timeStamp * 1000);  
+            return date;  
+    }  
+       
+    /** 
+     * 得到日期   yyyy-MM-dd 
+     * @param timeStamp  时间戳 
+     * @return 
+     */ 
+    public static String formatDate(long timeStamp) {     
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");  
+            String date = sdf.format(timeStamp*1000);  
+            return date;  
+    }  
+       
+    /** 
+     * 得到时间  HH:mm:ss 
+     * @param timeStamp   时间戳 
+     * @return 
+     */ 
+    public static String getTime(long timeStamp) {    
+            String time = null;  
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
+            String date = sdf.format(timeStamp * 1000);  
+            String[] split = date.split("\\s");  
+            if ( split.length > 1 ){  
+                    time = split[1];  
+            }  
+            return time;  
+    }  
+       
+    /** 
+     * 将一个时间戳转换成提示性时间字符串，如刚刚，1秒前 
+     *  
+     * @param timeStamp 
+     * @return 
+     */ 
+    public static String convertTimeToFormat(long timeStamp) {  
+            long curTime =System.currentTimeMillis() / (long) 1000 ;  
+            long time = curTime - timeStamp;  
+
+            if (time < 60 && time >= 0) {  
+                    return "刚刚";  
+            } else if (time >= 60 && time < 3600) {  
+                    return time / 60 + "分钟前";  
+            } else if (time >= 3600 && time < 3600 * 24) {  
+                    return time / 3600 + "小时前";  
+            } else if (time >= 3600 * 24 && time < 3600 * 24 * 30) {  
+                    return time / 3600 / 24 + "天前";  
+            } else if (time >= 3600 * 24 * 30 && time < 3600 * 24 * 30 * 12) {  
+                    return time / 3600 / 24 / 30 + "个月前";  
+            } else if (time >= 3600 * 24 * 30 * 12) {  
+                    return time / 3600 / 24 / 30 / 12 + "年前";  
+            } else {  
+                    return "刚刚";  
+            }  
+    }  
+       
+    /** 
+     * 将一个时间戳转换成提示性时间字符串，(多少分钟) 
+     *  
+     * @param timeStamp 
+     * @return 
+     */ 
+    public static String timeStampToFormat(long timeStamp) {  
+            long curTime =System.currentTimeMillis() / (long) 1000 ;  
+            long time = curTime - timeStamp;  
+            return time/60 + "";  
+    }     
+}

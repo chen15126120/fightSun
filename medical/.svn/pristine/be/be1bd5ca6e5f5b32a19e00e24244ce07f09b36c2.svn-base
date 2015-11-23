@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ccn.medical.dao.MessageInfoMapper" >
+  <resultMap id="BaseResultMap" type="ccn.medical.model.MessageInfo" >
+		<result jdbcType="INTEGER" property="messageId" column="message_id"/>
+		<result jdbcType="VARCHAR" property="messageTitle" column="message_title"/>
+		<result jdbcType="VARCHAR" property="messageContent" column="message_content"/>
+		<result jdbcType="VARCHAR" property="messageTime"  column="message_time" /> 
+		<result jdbcType="VARCHAR" property="messagePublisher" column="message_publisher"/>
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    message_id, message_title, message_content, message_time ,message_publisher
+  </sql>
+   
+ 
+  <!-- 查询sql -->
+  <select id="queryIndexMessage" resultMap="BaseResultMap">
+  	SELECT * FROM new_message  WHERE state = 1 ORDER BY message_time DESC
+  </select>
+  
+</mapper>

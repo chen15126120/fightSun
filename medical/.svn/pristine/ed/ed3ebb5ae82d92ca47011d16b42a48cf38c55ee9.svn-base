@@ -1,0 +1,184 @@
+#doctor .doctor-img img{
+	margin: 10px 0px;
+	border-radius: 80px;
+}
+#doctor .doctor-img h1{
+	font-size: 24px;
+	color: #333;
+	margin: 30px;
+}
+#doctor .doctor-img h1 span{
+	font-size: 18px;
+	display: block;
+	color: #999;
+}
+#doctor .doctor-info{
+	margin: 10px 0px;
+}
+#doctor .doctor-info h1 span.ke{	
+	font-weight: 700px;
+}
+#doctor .doctor-info li{
+	border: 1px solid #e5e5e5;
+	width: 350px;
+	height: 150px;
+	margin: 10px 0;
+	background: #f8f6f3;
+}
+#doctor .doctor-info li p{
+	color: #333;
+	font-size: 14px;
+	padding: 8px;
+}
+#doctor .doctor-info li p.title{
+	font-size: 16px;
+	color: #fc9a00;
+	font-weight: 700;
+	padding: 5px;
+	background: #fff;
+	border-bottom: 1px solid #eee;
+}
+#doctor .doctor-info li p.title a{
+	color: #999;
+	font-size: 12px;
+	display: block;
+	float: right;
+}
+#doctor .doctor-info li .reward{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+#doctor .doctor-info li .reward li{
+	width: 100px;
+	float: left;
+	height: auto;
+	margin: 0 5px;
+	position: relative;
+	list-style: none;
+	background: none;
+	border: 0;
+	_margin: 0 10px 0 8px;
+}
+#doctor .doctor-info li .reward li img{
+	width: 100px;
+	height: 54px;
+	float: left;
+}
+#doctor .doctor-info li .reward li span{
+	width: 100px;
+	font-size: 12px;
+	float: left;
+	color: #828282;
+	text-align: center;
+	margin-top: 5px;
+	line-height: 18px;
+}
+#order{
+	width: 550px;
+}
+#order .date{
+	height: 18px;
+	margin: 10px 0;
+}
+#order .date h1{
+	color: #333;
+	float: left;
+	font-size: 20px;
+}
+#order .date p{
+	font-size: 14px;
+	float: right;
+	line-height: 28px;
+}
+#order .date p span{
+	margin: 10px;
+}
+#order .date p a{
+	color: #fff;
+	background: #fc9a00;
+	display: block;
+	width: 40px;
+	float: left;
+	margin: 0 10px;
+	padding: 3px 10px;
+	border-radius: 20px;
+}
+#order .table{
+	width: 960px;
+	margin: 30px 0px;
+	text-align: center;
+}
+#order .table>tbody>tr>td {
+	padding: 12px;
+	font-size: 14px;
+}
+#order .table>tbody>tr>td,#order .table>thead>tr>th{
+	background: #f6f6f6;
+}
+#order .table>tbody>tr>td a{
+	color: #fff;
+}
+#order .table>tbody>tr>td.able,#order .table>tbody>tr>td.disabled{
+	background: #73e470;
+}
+#order .table>tbody>tr>td.disabled{
+	background: #bebebe;
+}
+#order .table>tbody>tr>td.disabled a{
+	color: #333;
+}
+
+#calendar{
+	margin: 0 0 50px 0;
+}
+#calendar .fc-time-grid .fc-slats td{
+	height: 2.95em;
+}
+#calendar .fc-day-grid-event .fc-content{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+}
+#calendar .fc-basic-view .fc-body .fc-row{
+	min-height: 30px;
+}
+#calendar .fc th, .fc td{
+	font-size: 16px;
+	height: 20px;
+	line-height: 20px;
+}
+.fc-ltr .fc-basic-view .fc-day-number {
+  text-align: center;
+  line-height: 2em;
+}
+.fc th, .fc td{
+	height: 35px;
+	line-height: 35px;
+}
+.fc-view-container{
+	height: 470px;
+}
+.table-normal>tbody>tr>td, .table-normal>thead>tr>th{
+	text-align: center;
+	font-size: 16px;
+}
+.ui-widget-content a{
+	color: #fff;
+	display: block;
+	text-align: center;
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+	font-weight: 700px;	
+	border-radius: 10px;
+}
+.ui-widget-content .disabled a{
+	color: #333;
+	background: #bebebe;
+}
+.ui-widget-content .able a{
+	color: #fff;
+	background: #73e470;
+}

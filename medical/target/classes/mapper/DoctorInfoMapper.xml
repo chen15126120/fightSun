@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ccn.medical.dao.DoctorInfoMapper" >
+  <resultMap id="DoctorInfoMap" type="ccn.medical.model.DoctorInfo" >
+		<result jdbcType="INTEGER" property="doctorId" column="doctor_id"/>
+		<result jdbcType="INTEGER" property="usersId" column="users_id"/>
+		<result jdbcType="VARCHAR" property="doctorName" column="doctor_name"/>
+		<result jdbcType="VARCHAR" property="doctorSex" column="doctor_sex"/>
+		<result jdbcType="VARCHAR" property="doctorDirthday"  column="doctor_birthday" /> 
+		<result jdbcType="INTEGER" property="departmentsId" column="departments_id"/>
+		<result jdbcType="VARCHAR" property="positionalTitles" column="positional_titles"/>
+		<result jdbcType="VARCHAR" property="doctorIntroduction" column="doctor_introduction"/>
+		<result jdbcType="VARCHAR" property="doctorPhone" column="doctor_phone"/>
+		<result jdbcType="VARCHAR" property="doctorEmail" column="doctor_email"/>
+		<result jdbcType="VARCHAR" property="doctorPassword" column="doctor_password"/>
+		<result jdbcType="VARCHAR" property="doctorAddress" column="doctor_address"/>
+		<result jdbcType="VARCHAR" property="doctorPicaure" column="doctor_picaure"/>
+		<result jdbcType="VARCHAR" property="doctorCertify" column="doctor_certify"/>
+		<result jdbcType="VARCHAR" property="doctorAutigraph" column="doctor_autograph"/>
+		<result jdbcType="VARCHAR" property="doctorStart" column="doctor_start"/>
+		<result jdbcType="INTEGER" property="hospitalId" column="hospital_id"/>
+		<result jdbcType="VARCHAR" property="hospitalName" column="hospital_name"/>
+		<result jdbcType="VARCHAR" property="departmentsName" column="departments_name"/>
+		<result jdbcType="VARCHAR" property="doctorQQ" column="doctor_qq"/>
+		
+   </resultMap>
+   
+   <!-- 首页推荐医生   -->
+   <select id="queryIndexDoctorInfos"  resultMap="DoctorInfoMap">
+	 SELECT * FROM (SELECT * FROM doctor_info  where doctor_start = 1
+                ORDER BY doctor_id DESC ) t GROUP BY doctor_id LIMIT 10
+	</select>
+	
+	<!-- 专家预约 专家信息 -->
+   <select id="queryAppointment"  resultMap="DoctorInfoMap" parameterType="int">
+	  SELECT * FROM doctor_info  where doctor_start = 1 
+	 <!--  <if test="departmentsId != null and departmentsId != 0"> -->
+	  	and departments_id = #{departmentsId}
+	 <!--  </if> -->
+       ORDER BY doctor_id DESC
+	</select>
+	
+	<!-- 通过ID查看医生信息 -->
+	<select id="queryDoctorHomeInfo"  resultMap="DoctorInfoMap" parameterType="int">
+	  SELECT * FROM doctor_info  where doctor_start = 1
+	  <!--  <if test="doctorId != null and doctorId != 0"> -->
+	   	 and doctor_id = #{doctorId}
+	   <!-- </if> -->
+       ORDER BY doctor_id DESC
+	</select>
+	
+	
+</mapper>

@@ -1,0 +1,10 @@
+Ext.define('Medical.Application', {
+    extend: 'Ext.app.Application',//继承Ext.app.Application
+    
+    name: 'Medical',//命名空间
+
+    stores: [
+        //需要用到的stores
+    ]
+    
+});

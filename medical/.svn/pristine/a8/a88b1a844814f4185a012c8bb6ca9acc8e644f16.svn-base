@@ -1,0 +1,220 @@
+
+$(function(){
+   // banner头图
+  $('#banner').slick({
+    dots: true,
+    autoplay: true,
+    arrows:true,
+    autoplaySpeed: 3000,
+    onAfterChange: function(s,id) {
+    }
+  });
+
+  // 最新消息
+  var settime;
+  $(".news-list").hover(function () {
+      clearInterval(settime);
+  }, function () {
+      settime = setInterval(function () {
+          var $first = $(".news-list ul:first");     //选取div下的第一个ul 而不是li；
+          var height = $first.find("li:first").height();      //获取第一个li的高度，为ul向上移动做准备；
+          $first.animate({ "marginTop": -height + "px" }, 600, function () {
+              $first.css({ marginTop: 0 }).find("li:first").appendTo($first); //设置上边距为零，为了下一次移动做准备
+          });
+      }, 3000);
+  }).trigger("mouseleave");       //trigger()方法的作用是触发被选元素的制定事件类型
+  // 推荐专家
+  $('.recommend-list').slick({
+    autoplay: true,
+    arrows:true,
+    autoplaySpeed: 3000,
+    slidesToShow:3,
+    slidesToScroll:1,
+    speed: 3000,
+    onAfterChange: function(s,id) {
+    }
+  });
+  //会诊流程切换
+  $(".clickStepTag").find('li').click(function () {
+      var index = $(this).attr('i'),
+              setp = $('.showStep'),
+              showSetp = $('.showStep' + index),
+              parent = $(".clickStepTag");
+
+      for (i = 1; i <= 3; i++) {
+          parent.removeClass('picGuide' + i);
+      }
+      setp.hide();
+      showSetp.show();
+      parent.addClass('picGuide' + index);
+  })
+
+  //提交登录
+  $("#submitReg").click(function () {
+      var password = $("#password").val(),
+              user_name = $("#user_name").val();
+
+      if (user_name == '') {
+          alert('请输入用户名');
+          return;
+      }
+
+      if (password == '') {
+          alert('请输入密码');
+          return;
+      }
+      $("#regFormTwo").submit();
+  })
+})
+
+//兼容H5属性标签
+if (document.getElementById('regFormTwo')) {
+    Placeholder.init({
+        normal: "#985d00",
+        placeholder: "#A9A9A9",
+        range: document.getElementById('regFormTwo')
+    });
+}
+
+//tag标签切换
+function selectTag(showContent, selfObj) {
+    //操作标签
+    var tag = document.getElementById("tags_ul").getElementsByTagName("li");
+    var taglength = tag.length;
+    for (i = 0; i < taglength; i++) {
+        tag[i].className = "";
+    }
+    selfObj.parentNode.className = "selectTag";
+    //操作内容
+    for (i = 0; j = document.getElementById("tagContent" + i); i++) {
+        j.style.display = "none";
+    }
+    document.getElementById(showContent).style.display = "block";
+}
+
+$(function(){
+  //banner 登录注册面板
+  $(".onfl").click(function(){
+        $(".box_r1").show();
+        $(this).removeClass('hover');
+        $(".box_r2").hide();
+        $(".onfr").addClass('hover');
+  });
+  $(".onfr").click(function(){
+      $(".box_r1").hide();
+      $(this).removeClass('hover');
+      $(".box_r2").show();
+      $(".onfl").addClass('hover');
+      if($.browser.version=="6.0"){
+          if(!$("#LoginForm").attr("ie6pl")){
+            $("#LoginForm").placeholder();
+            $("#LoginForm").attr("ie6pl",true);
+          }  
+      }
+  });
+  $('input:radio[name="role"]').on('ifChecked', function(event){
+    var val=$('input:radio[name="role"]:checked').val();
+    if(val=='doctor'){
+      $('.rule').html("请阅读医生<a href='http://www.163.com/' taget='_bank'>《服务协议》</a>和<a href='http://www.163.com/' taget='_bank'>《隐私条款》</a>");
+    }else{
+      $('.rule').html("请阅读患者<a href='http://baidu.com/' taget='_bank'>《服务协议》</a>和<a href='http://baidu.com/' taget='_bank'>《隐私条款》</a>");
+    }
+  });
+});
+// 验证手机号码
+function tel(){
+  var tel = /^1[3|4|5|8]\d{9}$/;
+  var v = $("#tel").val();
+  if(v !== '') {
+    if(!tel.test(v)){
+      alert('手机格式不对');
+    }else{
+      alert('获取验证码操作>>>');
+    }
+  }else{
+    alert('请先填写手机号码');
+  }
+};
+$(document).ready(function(){
+  // 
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_flat-red',
+    radioClass: 'iradio_flat-red'
+  });
+  // 表单验证
+  $('form').validate({
+    onBlur : true,
+    eachValidField : function() {
+
+      $(this).closest('div').removeClass('error').addClass('success');
+    },
+    eachInvalidField : function() {
+
+      $(this).closest('div').removeClass('success').addClass('error');
+    },
+    conditional : {
+      confirm : function() {
+        return $(this).val() == $('#password').val();
+      }
+    },
+    description : {
+      user : {
+        pattern : '<div class="error">用户名必须有3-16位字母或数字组成</div>',
+        required : '<div class="error">必填</div>'
+      },
+      user_name : {
+        pattern : '<div class="error">用户名必须有3-16位字母或数字组成</div>',
+        required : '<div class="error">必填</div>'
+      },
+      email: {
+        pattern : '<div class="error">邮箱格式不正确</div>',
+        required : '<div class="error">必填</div>'
+      },
+      tel : {
+        pattern : '<div class="error">手机号码格式不正确</div>',
+        required : '<div class="error">必填</div>'
+      },
+      // code : {
+      //   required : '<div class="error">必填</div>'
+      // },
+      password : {
+        pattern : '<div class="error">密码必须以字母开头，由数字、字母、下划线组成，长度6-18位</div>',
+        required : '<div class="error">必填</div>'
+      },
+      // repassword : {
+      //   required : '<div class="error">必填</div>',
+      //   conditional : '<div class="error">两次密码输入不一致！</div>'
+      // },
+      check : {
+        required : '<div class="error">必选</div>'
+      },
+      login_password : {
+        required : '<div class="error">必填</div>'
+      },
+      login_code : {
+        required : '<div class="error">必填</div>'
+      }
+    }
+  });
+  $.validateExtend({
+    // doc_username 为该input里面的标记，需要验证的就要放在此处
+    user : {
+      conditional : function(value) {
+        $.ajax({
+          type:'POST',
+          data:{name:value},
+          url:'data.txt',
+          success:function(result){
+            if(result=='1')
+            {
+              return false;
+            }else{
+              return true;
+            }
+            //  需要返回真或假。
+          }
+        });
+      }
+    }
+  });
+});

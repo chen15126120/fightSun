@@ -1,0 +1,6 @@
+##  mysql  driver  
+
+jdbc_driverClassName=com.mysql.jdbc.Driver
+jdbc_url=jdbc:mysql://192.168.0.136:3306/medical_care?useUnicode=true&amp;characterEncoding=utf-8
+jdbc_username=root
+jdbc_password=root

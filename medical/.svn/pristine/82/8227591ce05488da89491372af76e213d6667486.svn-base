@@ -1,0 +1,7 @@
+Ext.application({
+    name: 'Medical',//应用的命名空间
+
+    extend: 'Medical.Application',//继承自app目录下Application.js
+    
+    autoCreateViewport: 'Medical.view.main.Main'//自动创建viewport，并引入app\view\main\Main.js文件，创建MyApp.view.main.Main
+});

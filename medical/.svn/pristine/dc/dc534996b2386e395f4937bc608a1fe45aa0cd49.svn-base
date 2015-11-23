@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ccn.medical.dao.UsersInfoMapper" >
+ 
+  
+  
+    <!-- 用户注册 -->
+     <insert id="addUsers" parameterType="ccn.medical.model.UsersInfo">
+    insert into soul_users_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userName != null" >
+        user_name
+      </if>
+      <if test="password != null" >
+       ,password
+      </if>
+      <if test="email != null" >
+        ,email
+      </if>
+      <if test="state != null and state != 0" >
+        ,state
+      </if>
+      <if test="phoneNumber != null" >
+        ,phone_number
+      </if>
+      <if test="createTime != null" >
+        ,create_time
+      </if>
+      <if test="realName != null" >
+        ,real_name
+      </if>
+      <if test="sex != null and sex != 0" >
+        ,sex
+      </if>
+      <if test="birthday != null" >
+        ,birthday
+      </if>
+      <if test="idcard != null" >
+        ,idcard
+      </if>
+      <if test="bloodtype != null" >
+        ,bloodtype
+      </if>
+      <if test="guardianName1 != null" >
+        ,guardian_name1
+      </if>
+      <if test="guardianIdcard1 != null" >
+        ,guardian_idcard1
+      </if>
+      <if test="guardianRelation1 != null" >
+        ,guardian_relation1
+      </if>
+      <if test="guardianPhone1 != null" >
+        ,guardian_phone1
+      </if>
+      <if test="guardianAddress1 != null" >
+        ,guardian_address1
+      </if>
+      <if test="guardianName2 != null" >
+        ,guardian_name2
+      </if>
+      <if test="guardianIdcard2 != null" >
+        ,guardian_idcard2
+      </if>
+      <if test="guardianRelation2 != null" >
+        ,guardian_relation2
+      </if>
+      <if test="guardianPhone2 != null" >
+        ,guardian_phone2
+      </if>
+      <if test="guardianAddress2 != null" >
+        ,guardian_address2
+      </if>
+      <if test="detailedAddress != null" >
+        ,detailed_address
+      </if>
+      <if test="headSculpture != null" >
+        ,head_sculpture
+      </if>
+      <if test="autograph != null" >
+        ,autograph
+      </if>
+      <if test="remarks != null" >
+        ,remarks
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR}
+      </if>
+      <if test="password != null" >
+        , #{password,jdbcType=VARCHAR}
+      </if>
+      <if test="email != null" >
+      ,  #{email,jdbcType=VARCHAR}
+      </if>
+      <if test="state != null and state != 0" >
+       , #{state,jdbcType=INTEGER}
+      </if>
+       <if test="phoneNumber != null" >
+      ,  #{phoneNumber,jdbcType=VARCHAR}
+      </if>
+      <if test="createTime != null" >
+       , now()
+      </if>
+      <if test="realName != null" >
+        ,#{realName,jdbcType=VARCHAR}
+      </if>
+      <if test="sex != null and sex != 0" >
+      ,  #{sex,jdbcType=INTEGER}
+      </if>
+      <if test="birthday != null" >
+        ,#{birthday,jdbcType=DATE}
+      </if>
+      <if test="idcard != null" >
+        ,#{idcard,jdbcType=VARCHAR}
+      </if>
+      <if test="bloodtype != null" >
+        ,#{bloodtype,jdbcType=VARCHAR}
+      </if>
+      <if test="guardianName1 != null" >
+        ,#{guardianName1,jdbcType=VARCHAR}
+      </if>
+      <if test="guardianIdcard1 != null" >
+        ,#{guardianIdcard1,jdbcType=VARCHAR}
+      </if>
+      <if test="guardianRelation1 != null" >
+        ,#{guardianRelation1,jdbcType=VARCHAR}
+      </if>
+      <if test="guardianPhone1 != null" >
+        ,#{guardianPhone1,jdbcType=VARCHAR}
+      </if>
+      <if test="guardianAddress1 != null" >
+        ,#{guardianAddress1,jdbcType=VARCHAR}
+      </if>
+      <if test="guardianName2 != null" >
+        ,#{guardianName2,jdbcType=VARCHAR}
+      </if>
+      <if test="guardianIdcard2 != null" >
+        ,#{guardianIdcard2,jdbcType=VARCHAR}
+      </if>
+      <if test="guardianRelation2 != null" >
+        ,#{guardianRelation2,jdbcType=VARCHAR}
+      </if>
+      <if test="guardianPhone2 != null" >
+        ,#{guardianPhone2,jdbcType=VARCHAR}
+      </if>
+      <if test="guardianAddress2 != null" >
+        ,#{guardianAddress2,jdbcType=VARCHAR}
+      </if>
+      <if test="detailedAddress != null" >
+        ,#{detailedAddress,jdbcType=VARCHAR}
+      </if>
+      <if test="headSculpture != null" >
+        ,#{headSculpture,jdbcType=VARCHAR}
+      </if>
+      <if test="autograph != null" >
+        ,#{autograph,jdbcType=VARCHAR}
+      </if>
+      <if test="remarks != null" >
+        ,#{remarks,jdbcType=VARCHAR}
+      </if>     
+    </trim>
+  </insert> 
+  
+	<!-- 医生查看自己的患者信息 -->
+	<select id="queryAll" parameterType="int"   resultMap="UsersInfo"> 
+		select * from users
+	</select>
+</mapper>

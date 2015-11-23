@@ -1,0 +1,304 @@
+#left {
+	width: 360px;
+}
+
+#left .video{
+	width: 350px;
+	height: 210px;
+	background: #eee;
+	margin: 40px 0 10px 0;
+	border: 1px solid #aaa;
+}
+
+#right {
+	width: 585px;
+}
+#right .room {
+	margin: 40px 0;
+}
+#right .room .show{
+	width: 420px;
+	height: 380px;
+	border: 1px solid #aaa;
+}
+#right .room .show-content{
+	height: 349px;
+	background: #fcfcfc;
+	border-bottom: 1px solid #aaa;
+}
+
+#right .room .show-btn{
+	height: 30px;
+	line-height: 30px;
+	background: #f7f7f7;
+}
+#right .room .show-btn a{
+	font-size: 14px;
+	float: left;
+	color: #666;
+	text-align: center;
+	display: block;
+	width: 60px;
+}
+#right .room #look{
+	font-size: 14px;
+	color: #fff;
+	font-weight: 700;
+	width: 90px;
+	text-align: center;
+	border-radius: 10px;
+	line-height: 25px;
+	float: right;
+	display: block;
+	background-color: #08a3ea;
+	margin: 3px;
+}
+#right .room .user{
+	width: 140px;
+	height: 380px;
+	margin-left: 20px; 
+	border: 1px solid #aaa;
+}
+#right .room .user .user-list{
+	padding: 10px;
+	font-size: 16px;
+	margin: 10px auto;
+	width: 70%;
+	color: #333;
+	font-weight: 700;
+	border-radius: 15px;
+	background: #f3f3f3;
+	text-align: center;
+}
+#right .room .user .user-online{
+	color: #fc9a00;
+	font-size: 20px;
+	display: block;
+	font-weight: 700;
+	margin: 5px auto;
+	text-align: center;
+}
+#right .room .user .user-waiting li{
+	text-align: center;
+}
+#right .room .user .user-waiting li a{
+	color: #999;
+	font-size: 16px;
+}
+#right .room .user .user-do{
+	margin-top: 55px;
+}
+#right .room .user .user-do li{
+	width: 44%;
+	float: left;
+	height: 40px;
+	border-radius: 10px;
+	box-shadow: 1px 5px 5px rgba(0,0,0,0.1);
+	background: #eee;
+	margin: 2px 1px 6px 5px;
+}
+#right .room .user .user-do li a{
+	margin: 9px 14px;
+	display: block;
+	color: #fff;
+	font-size: 16px;
+}
+#right .room .user .user-do .call{
+	background: #fc9a00;
+}
+#right .room .user .user-do .answer{
+	background: #f60;
+}
+#right .room .user .user-do .seting{
+	background: #2bd558;
+}
+#right .room .user .user-do .break{
+	background: #08a3ea;
+}
+
+
+#message .message-body {
+	width: 100%;
+	height: 200px;
+	margin-top: 20px; 
+	border: 1px solid #aaa;
+}
+#message .message-body p{
+	margin: 10px;
+	font-size: 14px;
+	line-height: 20px;
+}
+#message .message-body p span{
+	float: left;
+	color: #fff;
+	margin: 0 10px;
+	padding: 0 5px;
+	border-radius: 5px;
+	font-weight: 700;
+}
+#message .message-body p.user span{
+	background: #2bd558;
+}
+#message .message-body p.doctor span{
+	background: #08a3ea;
+}
+
+#message-contents {
+	width: 95%;
+	height: 70px;
+	padding: 15px;
+}
+.btn-profile,.btn-cancle{
+	font-size: 20px;
+	color: #fff;
+	float: right;
+	font-weight: 700;
+	width: 100px;
+	background-color: #fc9a00;
+	margin: 20px 120px;
+}
+.btn-profile{
+	margin: 20px 10px 20px 0px;
+}
+.btn-cancle{
+	margin: 20px 40px;
+	background-color: #999;
+}
+
+
+
+#look-recipe{
+	display: none;
+	width: 100%;
+	margin: 20px 0 0 0;
+	border: 1px solid #aaa;
+}
+#look-recipe .hospital,#look-recipes .hospital{
+	font-size: 24px;
+	margin: 10px;
+	font-weight: 700;
+	text-align: center;
+	font-family: sans-serif;
+}
+#look-recipe .hospital span,#look-recipes .hospital span{
+	font-size: 18px;
+	padding-left: 20px;
+}
+#look-recipe .hospital span i,#look-recipes .hospital span i{
+	font-style: normal;	
+	border-bottom: 1px solid #333;
+}
+#look-recipe .hospital span select, #look-recipes .hospital span select{
+	font-size: 16px;
+}
+#look-recipe .title,#look-recipes .title{
+	font-size: 14px;
+	line-height: 35px;
+	border-bottom: 1px solid #aaa;
+}
+#look-recipe .titles,#look-recipe .titless,#look-recipes .titles,#look-recipes .titless{
+	font-size: 14px;
+	line-height: 35px;
+	position:absolute;
+}
+
+#look-recipe .title span,#look-recipe .titles span,#look-recipe .titless span,#look-recipes .title span,#look-recipes .titles span,#look-recipes .titless span{
+	font-size: 15px;
+	margin: 0 5px 0 12px;
+	font-weight: 700;
+}
+#look-recipe .titles i,#look-recipe .recipe-drug i,#look-recipes .titles i,#look-recipes .recipe-drug i{
+	font-size: 15px;
+	padding: 0 10px;
+	font-style: normal;
+	border-bottom: 1px solid #333;
+}
+#look-recipe .titless span,#look-recipes .titless span{
+	margin: 0 0 0 3px;
+}
+#look-recipe .titless input,#look-recipe .hospital span input,#look-recipes .titless input,#look-recipes .hospital span input{
+	width: 60px;
+	border: 0;
+	border-bottom: 1px solid #333;
+}
+#look-recipe .recipe-info,#look-recipes .recipe-info{
+	min-height: 300px;	
+	width: 32%;
+	padding: 10px;
+}
+#look-recipe .recipe-info span,#look-recipes .recipe-info span{
+	font-size: 16px;
+	font-weight: 700;
+	display: block;
+	padding-bottom: 9px;
+}
+#look-recipe .recipe-info textarea,#look-recipes .recipe-info textarea{
+	width: 185px;
+	margin: 1px;
+	overflow-y:hidden;
+	min-height: 300px;
+	font-size: 14px;
+}
+#look-recipe .recipe-drug,#look-recipes .recipe-drug{
+	width: 64%;
+	min-height: 350px;
+	border-left: 1px solid #aaa;
+}
+#look-recipe .recipe-drug p,#look-recipe .recipe-drug textarea,#look-recipes .recipe-drug p,#look-recipes .recipe-drug textarea{
+	font-size: 14px;
+	padding: 10px;
+}
+#look-recipe .recipe-drug textarea,#look-recipes .recipe-drug textarea{
+	width: 330px;
+	margin: 10px;
+	overflow-y:hidden;
+	min-height: 300px;
+	font-size: 14px;
+}
+#look-recipe .recipe-drug span.drug,#look-recipes .recipe-drug span.drug{
+	display: block;
+	padding: 10px 0 0 10px;	
+	font-size: 16px;
+	font-weight: 700;
+}
+#look-recipe .recipe-drug span.r,#look-recipes .recipe-drug span.r{
+	font-size: 29px;
+	font-weight: 700;
+	color: #999;
+	margin-right: 15px;
+}
+#look-recipe .recipe-drug span,#look-recipes .recipe-drug span{
+	font-size: 16px;
+	font-weight: 700;
+}
+#look-recipe .recipe-drug p.doctor,#look-recipes .recipe-drug p.doctor{
+	text-align: right;
+}
+.btn-recipe{
+	font-size: 20px;
+	color: #fff;
+	float: right;
+	font-weight: 700;
+	width: 100px;
+	background-color: #fc9a00;
+	margin: 10px 0px;
+}
+.btn-recipe,.btn-recipe-cancle{
+	font-size: 20px;
+	color: #fff;
+	float: right;
+	font-weight: 700;
+	width: 100px;
+	background-color: #fc9a00;
+	margin: 20px 120px;
+}
+.btn-recipe{
+	margin: 20px 10px 20px 0px;
+}
+.btn-recipe-cancle{
+	margin: 20px 40px;
+	background-color: #999;
+}
+#look-recipes .recipe{
+	border: 1px solid;
+}

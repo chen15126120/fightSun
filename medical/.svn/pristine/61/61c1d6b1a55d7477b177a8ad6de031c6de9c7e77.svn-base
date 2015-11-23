@@ -1,0 +1,146 @@
+.trophy {
+  width: 300px;
+  margin: 0 10px;
+  _margin: 0 5px;
+}
+
+.title {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 30px 0 60px 0;
+  font-size: 36px;
+  line-height: 48px;
+}
+.news .title{  
+  line-height: 45px;
+  margin: 30px 0 20px 0;
+}
+.f_y {
+  color: #ffa800;
+  border-bottom:1px solid #ffa300
+}
+.trophy_ul {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.trophy_ul li {
+  width: 100%;
+  float: left;
+  height: auto;
+  margin-bottom: 20px;
+}
+.m_b20 {
+  margin-bottom: 20px;
+}
+p {
+  width: 100%;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+.trophy_ul li img {
+  width: 140px;
+  height: 140px;
+  float: left;
+}
+.trophy_ul li font {
+  width: 150px;
+  float: right;
+  height: auto;
+  font-size: 18px;
+  color: #ffa800;
+  line-height: 28px;
+}
+.trophy_ul li font b {
+  font-size: 24px;
+}
+
+
+
+.media {
+  width: 620px;
+  margin: 0 10px;
+  _margin: 0 5px;
+}
+.f_c {
+  color: #00b4d7;
+  border-bottom:1px solid #00b4d7
+}
+.media_ul {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.media_ul li {
+  width: 100%;
+  float: left;
+  height: auto;
+  margin-bottom: 20px;
+}
+.m_b10 {
+  margin-bottom: 10px;
+}
+.media_ul li img{
+  float: right;
+}
+.media_ul li span {
+  float: right;
+  width: 120px;
+  padding-top: 30px;
+  height: auto;
+  font-size: 18px;
+  color: #00b4d7;
+  line-height: 28px;
+}
+.media_ul li font {
+  width: 440px;
+  float: left;
+  height: auto;
+  font-size: 18px;
+  color: #00b4d7;
+  line-height: 28px;
+}
+.media_ul li font b {
+  font-size: 24px;
+}
+.retract {
+  width: 100%;
+  margin: 0 auto;
+  height: 35px;
+  display: block;
+  background: #ffa800;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 50px;
+  line-height: 35px;
+}
+.news_ul li{
+  font-size: 16px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+.news_title{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 30px 0 20px 0;
+  font-size: 20px;
+  line-height: 40px;
+}
+.news_title b{
+  margin-right: 5px;
+  font-size: 36px;
+}
+.time{
+  text-align: left;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+}
+.news-content p{
+  font-size: 16px;
+  margin: 10px 0 40px 0px;
+  color: #333;
+}

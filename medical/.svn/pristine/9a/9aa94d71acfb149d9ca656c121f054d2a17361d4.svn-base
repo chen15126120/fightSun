@@ -1,0 +1,70 @@
+#content #left{
+	width: 475px;
+	height: 450px;
+	margin: 20px 0;
+	background: #f8f8f8;
+	border: 1px solid #ddd;
+}
+#content #right{
+	width: 475px;
+	height: 450px;
+	margin: 20px 0;
+}
+.btn-login{
+	font-size: 20px;
+	color: #fff;
+	font-weight: 700;
+	width: 250px;
+	background-color: #fc9a00;
+	margin: 0px 100px;
+	margin-bottom: 10px;
+}
+#login{
+	padding: 30px 10px;
+}
+#login #code{
+	height: 27px;
+	width: 100px;
+}
+#login .input-group a{
+	display: block;
+	width: 80px;
+	color: #08a3ea;
+	margin: 5px 10px;
+	border-radius: 0;
+	float: right;
+	background: 0;
+	padding: 0;
+	font-size: 16px;
+}
+#login .error input{
+	border: 1px solid red;
+	border-radius: 5px;
+}
+#login p{
+	margin: 0 auto;
+	padding-bottom: 20px;
+	text-align: center;
+}
+#login p.to-reg{
+	font-size: 14px;
+}
+#login p.to-reg a{
+	color: #08a3ea;
+	font-size: 16px;
+	text-decoration: underline;
+}
+
+#login .qq,#login .wb{
+	float: left;
+	display: block;
+	width: 38px;
+	height: 40px;
+	margin-left: 10px;
+}
+#login .qq{
+	background: url(../img/qq.png);
+}
+#login .wb{
+	background: url(../img/weibo1.png);
+}

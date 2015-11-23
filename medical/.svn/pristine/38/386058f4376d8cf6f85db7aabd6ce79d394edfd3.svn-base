@@ -1,0 +1,23 @@
+package ccn.medical.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ccn.medical.dao.MessageInfoMapper;
+import ccn.medical.model.MessageInfo;
+import ccn.medical.service.MessageInfoService;
+
+@Service
+public class MessageInfoServiceImpl implements MessageInfoService{
+
+	@Autowired
+	private MessageInfoMapper messageInfoMapper;
+
+	@Override
+	public List<MessageInfo> queryIndexMessage() throws Exception {
+		return messageInfoMapper.queryIndexMessage();
+	}
+
+}

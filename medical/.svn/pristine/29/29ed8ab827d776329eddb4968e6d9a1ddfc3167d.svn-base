@@ -1,0 +1,39 @@
+#content .mentality, #content .life{
+	width: 100%;
+	min-height: 400px;
+	background: #fff;
+	margin: 20px 0;
+	border: 1px solid #fff;
+
+}
+#content .mentality{
+	/*background-position: 130px 15px;*/
+	background-position: 20px 15px;
+	background-image: url('../img/mentality.png');
+	background-repeat: no-repeat;
+}
+#content .life{
+	/*background-position: 130px 15px;*/
+	background-position: 20px 15px;
+	background-image: url('../img/life.png');
+	background-repeat: no-repeat;
+}
+#content .mentality ul, #content .life ul{
+	margin: 170px 130px 0 134px;
+}
+#content .mentality li, #content .life li{
+	color: #666;
+	font-size: 18px;
+	line-height: 40px;
+}
+#content .mentality li .icon-sign-blank, #content .life li .icon-sign-blank{
+	font-size: 12px;
+	margin-right: 10px;	
+	line-height: 40px;
+}
+#content .mentality li .icon-sign-blank{
+	color: #ffc47a;
+}
+#content .life li .icon-sign-blank{
+	color: #b3dff0;
+}

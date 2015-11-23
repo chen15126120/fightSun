@@ -1,0 +1,140 @@
+package ccn.medical.controller;
+
+import java.io.IOException;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import ccn.medical.model.UsersInfo;
+import ccn.medical.service.UsersInfoService;
+import ccn.medical.util.MD5Util;
+import ccn.medical.util.json.JsonUtils;
+
+/**
+ * 用户信息
+ * 
+ * @author  
+ *
+ */
+@Controller
+/*@RequestMapping("/users")*/
+public class UsersInfoController {
+	private final Logger log = LoggerFactory.getLogger(UsersInfoController.class); 
+	
+	private static UsersInfoService usersInfoService;
+	
+	public UsersInfoService getUsersInfoService() {
+		return usersInfoService;
+	}
+
+	@SuppressWarnings("static-access")
+	@Autowired
+	public void setUsersInfoService(UsersInfoService usersInfoService) {
+		this.usersInfoService = usersInfoService;
+	}
+
+	/**
+	 * 用户注册
+	 * @param UsersInfo
+	 * @param req
+	 * @param resp
+	 * @throws Exception 
+	 */
+	 
+	public void regUser(@ModelAttribute("usersInfo") UsersInfo usersInfo,
+			HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		/**
+		 * 
+		 * 用户注册步骤
+		 * 1.得到注册邮箱  判断 是否已注册
+		 * 2.得到手机号     判断 是否已注册
+		 * 3.立即注册
+		 * 4.填写个人信息  （注册的为医生——>医生个人信息    患者——>用户个人信息）
+		 * 5.提交信息 完成注册 发送注册成功短信
+		 * 
+		 */
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("email", req.getParameter("email")); 
+		map.put("phone", req.getParameter("phone")); 
+		try {
+			
+			UsersInfo user = usersInfoService.loginUser(map);
+			//判断邮箱和手机号是否已经注册
+			if(user.getEmail() != null){
+				req.setAttribute("messageInfo", "邮箱已存在");
+				return;
+			}
+			if(user.getPhone() != null){
+				req.setAttribute("messageInfo", "手机号已存在");
+				return;
+			}
+			
+			//得到用户注册的类型   1.医生   2患者
+			String regType = req.getParameter("regType");
+			if(regType.equals("1")){
+				//用户为医生  提交信息后跳转到医生个人信息页面
+			}else if (regType.equals("2")) {
+				//用户为患者  提交信息后跳转到患者个人信息页面
+			}
+			
+			regUsers(usersInfo); //跳转后填写所有信息后注册
+			log.info("成功——>用户注册信息:类型:"+regType+"邮箱:"+req.getParameter("email")+",电话:"+req.getParameter("phone"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			log.error("失败——>用户注册信息:"+e.toString());
+		}
+		
+	}
+	
+	/**
+	 * 用户注册（添加） 修改
+	 * @param usersInfo
+	 * @return
+	 */
+	public static UsersInfo regUsers(UsersInfo usersInfo) {
+		if(usersInfo.getId() == 0){
+			usersInfo.setCreateTime(new Date());
+			usersInfo.setState((byte) 1);
+			//md5  用户密码加密 
+			usersInfo.setPassword(MD5Util.convertMD5(MD5Util.string2MD5(usersInfo.getPassword())));
+			
+			try {
+				usersInfoService.regUser(usersInfo);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return usersInfo;
+	}
+
+	/**
+	 * 查看所有的用户信息
+	 * @param model
+	 * @return
+	 */
+	
+	@RequestMapping("/queryAll")
+	public String queryAll(Map<String,Object> model){
+		List<UsersInfo> list = usersInfoService.queryAll();
+		String json = JsonUtils.listToJson(list);
+		model.put("list", list);
+		System.out.println("================>"+json);
+		 /*for (int i = 0; i < list.size(); i++) {
+			 UsersInfo usersInfo = list.get(i);
+			 System.out.println(usersInfo.getUserName());
+		}*/
+		
+		return "webpage/index";
+	}
+}

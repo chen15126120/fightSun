@@ -1,0 +1,35 @@
+package ccn.medical.service.impl;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ccn.medical.dao.UsersInfoMapper;
+import ccn.medical.model.UsersInfo;
+import ccn.medical.service.UsersInfoService;
+@Service
+public class UsersInfoServiceImpl implements UsersInfoService{
+	@Autowired
+	private UsersInfoMapper usersInfoMapper;
+  
+
+	@Override
+	public List<UsersInfo> queryAll() {
+		return usersInfoMapper.queryAll();
+	}
+
+	 //用户注册
+	@Override
+	public int regUser(UsersInfo usersInfo) throws Exception {
+		return usersInfoMapper.regUser(usersInfo);
+	}
+
+	//用户登录
+	@Override
+	public UsersInfo loginUser(Map<String, Object> map) throws Exception {
+		return usersInfoMapper.loginUser(map);
+	}
+
+}

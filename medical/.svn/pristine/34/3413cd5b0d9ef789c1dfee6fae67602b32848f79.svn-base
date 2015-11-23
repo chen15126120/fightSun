@@ -1,0 +1,81 @@
+#content-body{
+	background: #fdfaf4;
+}
+#content{	
+	padding: 0px;
+}
+#left{
+	width: 551px;
+	background: #fff;
+}
+#left ul{
+	min-height: 860px;
+}
+#left li{	
+	padding: 20px 20px 15px 20px;
+}
+#left li img{
+	border-radius: 80px; 
+}
+#left li .intro{
+	width: 330px;
+	margin: 20px 0 20px 20px;
+}
+#left li .intro h1 a{
+	color: #333;
+	font-weight: 500;
+	font-size: 24px;
+}
+#left li .intro h1 a span{
+	color: #666;
+	font-size: 18px;
+	padding-left: 10px;
+}
+#left li .intro p{
+	color: #666;
+	font-size: 18px;
+}
+#left li .intro p span{
+	color: #000;
+	font-weight: 500;
+	font-size: 18px;
+	padding-left: 5px;
+}
+#left li .intro a.enter{
+	float: left;
+	display: block;
+	width: 109px;
+	height: 44px;
+	margin-top: 15px;
+	background: url('../img/enter.png');
+}
+#left li .intro a.enter:hover{
+	background: url('../img/enter-hover.png');
+}
+#right{
+	width: 408px;
+	min-height: 1000px;
+}
+#right dl{
+	margin-left: 20px;
+}
+#right dt{
+	margin-top: 100px;
+}
+#right dd{
+	margin-top: 30px;
+}
+#right .one,#right .two{
+	font-size: 30px;
+	font-family: '宋体';
+}
+#right .one{
+	color: #00b7f3;
+}
+#right .two{
+	color: #fc9a00;
+}
+#right dd{
+	color: #666;
+	font-size: 18px;
+}
